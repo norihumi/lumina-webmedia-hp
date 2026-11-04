@@ -1436,3 +1436,31 @@ letter-spacing: 0.1em; /* 文字と文字の間隔を少し広げるとおしゃ
         grid-template-columns : repeat(1fr);
     }
 }
+
+/* ==========================================
+    <CONTACT>ページヘッダー (pageheader)
+========================================== */
+.contact-pageheader{
+    width : 100%;
+    background-color : #f9f8f6;
+}
+
+.contact-pageheader__inner{
+    max-width : 1100px;
+    text-align : center;
+    margin : 0 auto;
+    padding : 60px 20px;
+}
+
+.contact-pageheader__title{
+    color : #5b7065;
+    font-size : 32px;
+    letter-spacing : 5px;
+    margin-bottom : 30px;
+}
+
+.contact-pageheader__sub{
+    color : #333333;
+    font-size : 15px;
+    letter-spacing : 2px;
+}
