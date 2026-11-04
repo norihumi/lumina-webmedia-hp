@@ -1588,3 +1588,44 @@ letter-spacing: 0.1em; /* 文字と文字の間隔を少し広げるとおしゃ
     font-size : 15px;
     letter-spacing : 2px;
 }
+
+/* ==========================================
+    <PRIVACY>本文 (main)
+========================================== */
+.privacy-main{
+    width : 100%;
+    background-color : #f9f8f6; /* 共通のサンドベージュ背景 */
+    padding : 20px 20px 80px;
+}
+
+.privacy-main__inner {
+    max-width : 800px;
+    margin : 0 auto;
+    padding:  60px 50px;
+    border-radius : 8px;
+}
+
+.privacy-main__section {
+    margin-bottom : 40px;
+}
+
+.privacy-main__section:last-child {
+    margin-bottom : 0;
+}
+
+.privacy-main__heading {
+    font-size : 20px;
+    color : #5b7065; /* くすみグリーン */
+    font-weight : bold;
+    border-bottom : 1px solid #e5e5e5;
+    padding-bottom : 10px;
+    margin-bottom : 20px;
+    letter-spacing : 0.05em;
+}
+
+.privacy-main__text {
+    font-size : 15px;
+    color : #333333; /* スミ文字 */
+    line-height : 2.2; /* 行間を広めにとって読みやすく */
+    letter-spacing : 0.03em;
+}
