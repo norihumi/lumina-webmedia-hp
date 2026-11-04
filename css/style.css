@@ -596,3 +596,103 @@ letter-spacing: 0.1em; /* 文字と文字の間隔を少し広げるとおしゃ
     background-image :
         linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url("../img/about-mv.jpg");
 }
+
+/* ==========================================
+    <ABOUT>コンセプト (concept)
+========================================== */
+.about-concept{
+    width : 100%;
+    background-color : #f9f8f6;
+    padding: 80px 20px; /* セクション全体の上下左右に余白を設定 */
+}
+
+.about-concept__inner{
+    max-width : 1100px;
+    margin : 0 auto;
+}
+
+.about-concept__title{
+    text-align : center;
+    font-size : 30px;
+    font-weight : bold;
+    color : #5b7065;
+    margin-bottom : 50px;
+}
+
+.about-concept__content{
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    gap : 40px;
+}
+
+.about-concept__imgbox{
+    flex : 1;
+}
+
+.about-concept__imgbox img{
+    width : 100%;
+    height : auto;
+    object-fit : cover;
+    border-radius : 10px;
+}
+
+.about-concept__body{
+    flex : 1;
+}
+
+.about-concept__sub{
+    font-size : 20px;
+    font-weight : bold;
+    letter-spacing : 3px;
+    color : #5b7065;
+    padding-bottom : 20px;
+    line-height : 1.4;
+}
+
+.about-concept__text{
+    color : #5b7065;
+    line-height : 1.8;
+    font-size : 15px;
+}
+
+/* 2つの <p> タグの間の余白 */
+.about-concept__text + .about-concept__text {
+    margin-top: 16px;
+}
+
+@media screen and (max-width: 768px) {
+    /* セクション全体の余白を少し小さく */
+    .about-concept {
+        padding: 50px 20px;
+    }
+
+    /* タイトルの下余白を調整 */
+    .about-concept__title {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    /* 横並びから「縦並び（column）」に変更 */
+    .about-concept__content {
+        flex-direction: column;
+        gap: 24px; /* 画像とテキストの縦の間隔 */
+    }
+
+    /* 画像のトリミング設定 */
+    .about-concept__imgbox img {
+        aspect-ratio: 4 / 3; /* 横4 : 縦3 の比率に固定（または 1/1 で正方形） */
+        object-fit: cover;    /* 切り抜かれても画像を歪ませない設定 */
+    }
+
+    /* キャッチコピーの文字サイズをスマホ用に調整 */
+    .about-concept__sub {
+        font-size: 18px;
+        margin-bottom: 16px;
+    }
+
+    /* 本文の文字サイズ調整 */
+    .about-concept__text {
+        font-size: 14px;
+    }
+}
