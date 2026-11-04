@@ -27,9 +27,8 @@ a{
 }
 
 /* ==========================================
-    共通パーツ
+    共通パーツ : ヘッダー
 ========================================== */
-/* --- ヘッダー (header) --- */
 .header{
     width : 100%;
     background-color : #f9f8f6;
@@ -144,6 +143,91 @@ a{
     .header__hamburger.is-open span:nth-child(3){
         transform : translateY(-10px) rotate(-45deg);
     }
+}
+
+/* ==========================================
+   共通パーツ：サイドバー
+   ========================================== */
+.sidebar {
+    width: 300px;
+    flex-shrink: 0;
+}
+
+.sidebar-widget {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    padding: 30px 24px;
+    margin-bottom: 30px;
+}
+
+.sidebar-widget__title {
+    font-size: 16px;
+    color: #5B7065;
+    text-align: center;
+    margin: 0 0 20px 0;
+    letter-spacing: 0.1em;
+}
+
+/* ABOUT ME */
+.sidebar-widget__profile {
+    text-align: center;
+}
+
+.sidebar-widget__avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 12px;
+}
+
+.sidebar-widget__name {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+}
+
+.sidebar-widget__text {
+    font-size: 12px;
+    color: #777777;
+    text-align: left;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* CATEGORIES */
+.sidebar-widget__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-widget__item {
+    border-bottom: 1px dotted #E5E0D8;
+}
+
+.sidebar-widget__item:last-child {
+    border-bottom: none;
+}
+
+.sidebar-widget__link {
+    display: block;
+    padding: 10px 0;
+    color: #333333;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    transition: opacity 0.3s;
+}
+
+.sidebar-widget__link:hover {
+    opacity: 0.7;
+}
+
+.sidebar-widget__count {
+    font-size: 12px;
+    color: #999999;
+    margin-left: 4px;
 }
 
 /* ==========================================
@@ -290,4 +374,116 @@ a{
 
 .top-mv__dot.is-active {
     background-color: #ffffff;
+}
+
+/* ==========================================
+    <TOP>メインコンテンツ (content)
+========================================== */
+.top-content__container {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 50px;
+}
+
+.top-content__main {
+    flex: 1;
+}
+
+/* 記事カード（トップページ固有） */
+.top-content__card {
+    display: flex;
+    gap: 24px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #E5E0D8; /* カード間の区切り線 */
+    transition: opacity 0.3s; /* マウスホバー時のふわっとした効果 */
+}
+
+.top-content__card:last-child {
+  border-bottom: none;
+}
+
+.top-content__card:hover{
+    opacity : 0.75;
+}
+
+/* サムネイル画像 */
+.top-content__image-wrapper {
+    width: 240px;
+    flex-shrink: 0;
+}
+
+.top-content__image {
+    width: 100%;
+    height: auto;
+    border-radius: 12px; /* 10-12pxの角丸 */
+    object-fit: cover;
+}
+
+/* 本文エリア */
+.top-content__body {
+    flex: 1;
+}
+
+/* カテゴリタグ */
+.top-content__category {
+    display: inline-block;
+    background-color: #5B7065; /* アクセントカラー */
+    color: #FFFFFF;
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+    margin-bottom: 12px;
+}
+
+/* タイトル */
+.top-content__title {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 10px 0;
+    line-height: 1.5;
+}
+
+/* 抜粋テキスト */
+.top-content__excerpt {
+    font-size: 13px;
+    color: #777777;
+    margin: 0 0 12px 0;
+    line-height: 1.6;
+}
+
+/* 日付 */
+.top-content__date {
+    font-size: 12px;
+    color: #999999;
+    display: block;
+}
+
+@media (max-width: 768px) {
+  
+    /* 2カラムを1カラム（縦並び）に変更 */
+    .top-content__container {
+        flex-direction: column; /* 縦並びにする */
+        gap: 40px;
+        padding: 0 16px;
+        margin: 30px auto;
+    }
+
+    /* サイドバーの幅を100%にして下に伸ばす */
+    .sidebar {
+        width: 100%;
+    }
+
+    /* 記事カードもスマホ用に縦並びに（画像の上、テキストの下） */
+    .top-content__card {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .top-content__image-wrapper {
+        width: 100%;
+    }
 }
