@@ -71,6 +71,100 @@
     </section>
 
     <!-- =========================================
+        お問い合わせフォーム
+    ========================================== -->
+    <section class="contact-form">
+        <div class="contact-form__inner">
+            <form action="#" method="post" class="contact-form__box">
+                <dl class="contact-form__list">
+
+                    <!-- 名前 -->
+                    <div class="contact-form__item">
+                        <dt class="contact-form__label">
+                            <label for="name">
+                                お名前
+                            </label>
+                            <span class="contact-form__tag">
+                                必須
+                            </span>
+                        </dt>
+                        <dd class="contact-form__input">
+                            <input type="text" id="name" name="name" required>
+                        </dd>
+                    </div>
+
+                    <!-- メールアドレス -->
+                    <div class="contact-form__item">
+                        <dt class="contact-form__label">
+                            <label for="mail">
+                                メールアドレス
+                            </label>
+                            <span class="contact-form__tag">
+                                必須
+                            </span>
+                        </dt>
+                        <dd class="contact-form__input">
+                            <input type="email" id="mail" name="mail" required>
+                        </dd>
+                    </div>
+
+                    <!-- 種別 -->
+                    <div class="contact-form__item">
+                        <dt class="contact-form__label">
+                            <label for="category">
+                                お問い合わせ種別
+                            </label>
+                            <span class="contact-form__tag contact-form__tag_optional">
+                                選択
+                            </span>
+                        </dt>
+                        <dd class="contact-form__input">
+                            <select name="category" id="category" class="contact-form__select">
+                                <option value="" hidden>
+                                    選択してください
+                                </option>
+                                <option value="item1">
+                                    ご意見・ご感想
+                                </option>
+                                <option value="item2">
+                                    取材・お仕事のご依頼
+                                </option>
+                                <option value="item3">
+                                    その他
+                                </option>
+                            </select>
+                        </dd>
+                    </div>
+
+                    <!-- お問い合わせ内容 -->
+                    <div class="contact-form__item">
+                        <dt class="contact-form__label">
+                            <label for="message">
+                                お問い合わせ内容
+                            </label>
+                            <span class="contact-form__tag">
+                                必須
+                            </span>
+                        </dt>
+                        <dd class="contact-form__input">
+                            <textarea name="message" id="message" class="contact-form__textarea">
+                            </textarea>
+                        </dd>
+                    </div>
+
+                    <!-- 送信ボタン -->
+                    <div class="contact-form__btnbox">
+                        <button type="submit" class="contact-form__btn">
+                            送信
+                        </button>
+                    </div>
+
+               </dl>
+            </form>
+        </div>
+    </section>
+
+    <!-- =========================================
         フッター
     ========================================== -->
     <footer class="footer">
