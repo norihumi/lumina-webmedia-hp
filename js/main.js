@@ -92,3 +92,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // ★ 初期化：最初の自動スライドを開始
     startAutoSlide();
 });
+
+// =======================================
+// <ARCHIVE> 選択中の項目の変化 (category)
+// =======================================
+const categoryItems = document.querySelectorAll(".archive-category__item");
+
+categoryItems.forEach(item => {
+    item.addEventListener('click', function(e) {
+        e.preventDefault(); // ページがジャンプするのを防ぐ場合など
+
+        // 1. すべての項目から is-active を外す
+        categoryItems.forEach(el => el.classList.remove('is-active'));
+
+        // 2. クリックされた項目だけに is-active をつける
+        this.classList.add('is-active');
+    });
+});
