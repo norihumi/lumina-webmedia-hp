@@ -120,33 +120,75 @@ categoryItems.forEach(item => {
 });
 
 // ========================================================
-// <ARCHIVE> カテゴリフィルターに合わせてカードの表示 (catalog)
+// ヘッダーからカテゴリーフィルターへの移動
 // ========================================================
-// すべてのフィルターボタンとカードを取得
-const filterButtons = document.querySelectorAll('.archive-category__button'); // ※クラス名は実際のフィルターボタンに合わせて調整してください
-const cards = document.querySelectorAll('.archive-catalog__card');
+document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.archive-category__button');
+    const cards = document.querySelectorAll('.archive-catalog__card');
 
-// ボタンがクリックされたときの処理
-filterButtons.forEach(button => {
-    button.addEventListener('click', (e) => {
-        e.preventDefault(); // リンクの本来のジャンプ動作をストップ
+    // ガード句：もしボタンやカードが存在しないページならここでストップ（エラー防止）
+    if (filterButtons.length === 0 || cards.length === 0) return;
 
-        // 1. アクティブなボタンの見た目を切り替えるクラスの付け外し（必要に応じて）
-        filterButtons.forEach(btn => btn.classList.remove('is-active'));
-        button.classList.add('is-active');
+    // ==========================================
+    // 共通の絞り込み処理を行う関数（まとめ箱）
+    // ==========================================
+    function applyFilter(category) {
+        // 1. ボタンの親要素である li (.archive-category__item) を探して is-active を付け外し
+        const items = document.querySelectorAll('.archive-category__item');
+        
+        items.forEach(item => {
+            const btn = item.querySelector('.archive-category__button');
+            if (btn) {
+                const btnFilter = btn.getAttribute('data-filter');
+                if (btnFilter === category) {
+                    item.classList.add('is-active'); // 一致する li に付与
+                } else {
+                    item.classList.remove('is-active'); // 一致しない li からは外す
+                }
+            }
+        });
 
-        // 2. クリックされたボタンのデータ属性（例: "interior" や "all"）を取得
-        const filterValue = button.getAttribute('data-filter');
-
-        // 3. 各カードをチェックして表示/非表示を切り替える
+        // 2. 各カードをチェックして表示/非表示を切り替え
         cards.forEach(card => {
             const cardCategory = card.getAttribute('data-category');
-
-            if (filterValue === 'all' || cardCategory === filterValue) {
+            if (category === 'all' || cardCategory === category) {
                 card.style.display = 'block'; // 一致する場合は表示
             } else {
                 card.style.display = 'none';  // 一致しない場合は非表示
             }
+        });
+    }
+
+    // ==========================================
+    // ① ページ読み込み時（URLパラメータのチェック）
+    // ==========================================
+    const urlParams = new URLSearchParams(window.location.search);
+    const targetCategory = urlParams.get('category'); // 例: ?category=interior なら "interior" が取れる
+
+    if (targetCategory) {
+        // パラメータがある場合は、そのカテゴリーで絞り込む
+        applyFilter(targetCategory);
+    } else {
+        // パラメータがない（または archive.html のみで開かれた）場合は 'all' にする
+        applyFilter('all');
+    }
+
+    // ==========================================
+    // ② ボタンをクリックしたときの処理
+    // ==========================================
+    filterButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault(); // リンクの本来のジャンプ動作をストップ
+
+            // クリックされたボタンのカテゴリーを取得
+            const category = button.getAttribute('data-filter');
+
+            // 共通関数を呼び出して絞り込みを実行
+            applyFilter(category);
+
+            // ついでにブラウザのURLも書き換える（ページ移動せずに ?category=〇〇 を付与）
+            const newUrl = category === 'all' ? 'archive.html' : `archive.html?category=${category}`;
+            window.history.pushState({}, '', newUrl);
         });
     });
 });
