@@ -852,3 +852,155 @@ letter-spacing: 0.1em; /* 文字と文字の間隔を少し広げるとおしゃ
     border-radius : 12px;
     display : block;
 }
+
+/* ==========================================
+    <ARTICLE>記事本文 (maintext)
+========================================== */
+.article-maintext{
+    width : 100%;
+    background-color : #f9f8f6;
+    padding : 20px 50px 80px;
+}
+
+.article-maintext__inner{
+    max-width : 1100px;
+    margin : 0 auto;
+}
+
+.article-maintext__lead{
+    font-size : 1.1rem;
+    line-height : 1.8;
+    color : #333333;
+    margin-bottom : 40px;
+}
+
+.article-maintext__contents{
+    background-color : #e8e8e8;
+    border-radius : 8px;
+    padding : 24px 30px;
+
+    /* スマホ視点も考慮して少し広めに */
+    width : 80%;
+    max-width : 700px;
+
+    /* 下に余白を取る */
+    margin : 0 auto 50px;
+}
+
+.article-maintext__title{
+    font-size : 1.1rem;
+    font-weight : bold;
+    text-align : center;
+    color : #333333;
+    margin-bottom : 15px;
+}
+
+.article-maintext__item{
+    letter-spacing : 2px;
+    line-height : 2;
+    margin-bottom : 8px;
+}
+
+.article-maintext__item a:hover {
+    opacity: 0.7; /* マウスを載せたときに少し透けさせる */
+}
+
+.article-maintext__section{
+    margin-top : 50px;
+}
+
+.article-maintext__sub {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    line-height: 1.5;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.article-maintext__imgbox{
+    width : 100%;
+    margin : 25px 0;
+}
+
+.article-maintext__imgbox img{
+    width : 100%;
+    height : auto;
+    border-radius : 16px;
+    display : block;
+}
+
+.article-maintext__sentence{
+    font-size : 1rem;
+    line-height : 1.9;
+    color : #333333;
+    margin-bottom : 20px;
+}
+
+.article-maintext__quote{
+    background-color : #f0eee9;
+    border-radius : 8px;
+    padding : 25px 30px;
+    margin : 30px 0;
+}
+
+.article-maintext__quotetext{
+    font-size : 0.95rem;
+    line-height : 1.9;
+    letter-spacing : 1px;
+    color : #4a4a4a;
+    margin-bottom : 15px;
+}
+
+.article-maintext__source{
+    display : block;
+    text-align : right;
+    font-size : 0.85rem;
+    color : #666666;
+
+    /* citeのデフォルト斜体を解除 */
+    font-style : normal;
+}
+
+@media screen and (max-width: 768px) {
+    /* 全体のパディングを調整（左右の余白を狭くする） */
+    .article-maintext {
+        padding: 20px 20px 50px;
+    }
+
+    /* リード文の文字サイズ調整 */
+    .article-maintext__lead {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    /* 目次幅をスマホいっぱいに広げる */
+    .article-maintext__contents {
+        width: 100%;
+        padding: 20px 15px;
+        margin-bottom: 40px;
+    }
+
+    .article-maintext__item {
+        font-size: 0.95rem; /* リスト文字をややコンパクトに */
+        letter-spacing: 1px; /* 文字間隔をスマホ用に微調整 */
+    }
+
+    /* H2見出しのサイズと余白調整 */
+    .article-maintext__sub {
+        font-size: 1.25rem;
+        margin-bottom: 15px;
+    }
+
+    .article-maintext__section {
+        margin-top: 35px;
+    }
+
+    .article-maintext__quote{
+        padding : 20px;
+    }
+
+    .article-maintext__quotetext{
+        font-size : 0.9rem;
+    }
+}
