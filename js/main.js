@@ -109,3 +109,35 @@ categoryItems.forEach(item => {
         this.classList.add('is-active');
     });
 });
+
+// ========================================================
+// <ARCHIVE> カテゴリフィルターに合わせてカードの表示 (catalog)
+// ========================================================
+// すべてのフィルターボタンとカードを取得
+const filterButtons = document.querySelectorAll('.archive-category__button'); // ※クラス名は実際のフィルターボタンに合わせて調整してください
+const cards = document.querySelectorAll('.archive-catalog__card');
+
+// ボタンがクリックされたときの処理
+filterButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault(); // リンクの本来のジャンプ動作をストップ
+
+        // 1. アクティブなボタンの見た目を切り替えるクラスの付け外し（必要に応じて）
+        filterButtons.forEach(btn => btn.classList.remove('is-active'));
+        button.classList.add('is-active');
+
+        // 2. クリックされたボタンのデータ属性（例: "interior" や "all"）を取得
+        const filterValue = button.getAttribute('data-filter');
+
+        // 3. 各カードをチェックして表示/非表示を切り替える
+        cards.forEach(card => {
+            const cardCategory = card.getAttribute('data-category');
+
+            if (filterValue === 'all' || cardCategory === filterValue) {
+                card.style.display = 'block'; // 一致する場合は表示
+            } else {
+                card.style.display = 'none';  // 一致しない場合は非表示
+            }
+        });
+    });
+});
