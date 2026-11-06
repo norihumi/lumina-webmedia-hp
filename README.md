@@ -4,7 +4,6 @@
 レイアウト構造やコンポーネントの共通化を図り、保守性の高いHTML/CSS設計およびJavaScriptによる動的な演出を実装しています。
 
 👉 **[公開ページ（GitHub Pages）を見る](https://norihumi.github.io/lumina-webmedia-hp/)**  
-*(※上記URLの `YOUR-GITHUB-USERNAME` の部分をご自身のGitHubユーザー名に変更してください)*
 
 ---
 
