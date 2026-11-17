@@ -328,7 +328,7 @@ a{
     font-size : 36px;
     font-weight : normal;
     color : #f9f8f6;
-letter-spacing: 0.1em; /* 文字と文字の間隔を少し広げるとおしゃれになります */
+    letter-spacing: 0.1em; /* 文字と文字の間隔を少し広げるとおしゃれになります */
 }
 
 /* ==========================================
@@ -503,7 +503,7 @@ letter-spacing: 0.1em; /* 文字と文字の間隔を少し広げるとおしゃ
 }
 
 .top-content__card:last-child {
-  border-bottom: none;
+    border-bottom: none;
 }
 
 .top-content__card:hover{
