@@ -1263,3 +1263,31 @@ letter-spacing: 0.1em; /* 文字と文字の間隔を少し広げるとおしゃ
         width : 100%;
     }
 }
+
+/* ==========================================
+    <ARCHIVE>ページタイトル (title)
+========================================== */
+.archive-title{
+    width : 100%;
+    background-color : #f9f8f6;
+}
+
+.archive-title__inner{
+    max-width : 1100px;
+    margin : 0 auto;
+    padding : 60px 20px;
+    text-align : center;
+}
+
+.archive-title__main{
+    font-size : 32px;
+    letter-spacing : 5px;
+    margin-bottom : 15px;
+    color : #5b7065;
+}
+
+.archive-title__sub{
+    font-size : 15px;
+    letter-spacing : 2px;
+    color : #666666;
+}
