@@ -147,7 +147,7 @@ a{
 
 /* ==========================================
    共通パーツ：サイドバー
-   ========================================== */
+========================================== */
 .sidebar {
     width: 300px;
     flex-shrink: 0;
@@ -228,6 +228,80 @@ a{
     font-size: 12px;
     color: #999999;
     margin-left: 4px;
+}
+
+/* ==========================================
+   共通パーツ：フッター (footer)
+========================================== */
+.footer{
+    width : 100%;
+    background-color : #5b7065;
+    padding : 40px 0;
+}
+
+.footer-inner{
+    max-width : 1000px;
+    margin : 0 auto;
+    text-align : center;
+}
+
+.footer-imgbox{
+    padding : 20px;
+}
+
+.footer-list{
+    display : flex;
+    justify-content : center;
+    align-items : center;
+    gap : 30px;
+    padding : 0;
+    margin : 0 0 30px 0;
+}
+
+.footer-item {
+    border-right: 1px solid #ffffff;
+    padding-right: 30px;
+}
+
+.footer-item:last-child {
+    border-right: none;
+    padding-right: 0;
+}
+
+.footer-item a{
+    color : #ffffff;
+    font-size : 14px;
+    font-weight : bold;
+    text-decoration : none;
+}
+
+.footer-item a:hover{
+    opacity : 0.7;
+}
+
+.footer-copyrights {
+    color: #FFFFFF; /* 文字色を白にする */
+    font-size: 11px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 30px 16px 20px; /* スマホ用に上下左右の余白を少し縮める */
+    }
+
+    .footer-list {
+        flex-wrap: wrap;       /* 画面幅におさまらない時に自動で折り返す */
+        gap: 12px 16px;        /* 上下の間隔 12px / 左右の間隔 16px */
+        justify-content: center;
+    }
+
+  /* 縦に折り返した時に枠線が崩れるのを防ぐ設定 */
+    .footer-item {
+        border-right: none;    /* スマホでは右の縦線を消す */
+        padding-right: 0;
+    }
 }
 
 /* ==========================================
