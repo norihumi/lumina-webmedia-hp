@@ -789,3 +789,66 @@ letter-spacing: 0.1em; /* 文字と文字の間隔を少し広げるとおしゃ
         text-align: left; /* スマホでは文章を左揃えにすると自然で読みやすくなります */
     }
 }
+
+/* ==========================================
+    <ARTICLE>記事ヘッダー (header)
+========================================== */
+.article-header{
+    width : 100%;
+    background-color : #f9f8f6;
+    padding : 20px 50px;
+}
+
+.article-header__inner{
+    max-width : 1100px;
+    margin : 0 auto;
+}
+
+.article-header__titlebox{
+    padding : 10px 0;
+}
+
+.article-header__tag{
+    display : inline-block;
+    font-size : 16px;
+    letter-spacing : 2px;
+    background-color : #5b7065;
+    color : #ffffff;
+    padding : 6px 18px;
+    margin-bottom : 15px;
+    border-radius : 5px;
+
+    /* 英字をおしゃれなセリフ体に */
+    font-family: serif;
+}
+
+.article-header__title{
+    font-size : 28px;
+    font-weight : bold;
+    letter-spacing : 3px;
+    line-height : 1.6;
+    color : #333333;
+    margin-bottom : 10px;
+}
+
+.article-header__date{
+    display : block;
+    font-size : 14px;
+    letter-spacing : 2px;
+    color : #666666;
+    text-align : right;
+    margin-bottom : 15px;
+    font-family : serif;
+}
+
+.article-header__imgbox{
+    width : 100%;
+    overflow : hidden;
+}
+
+.article-header__imgbox img{
+    width : 100%;
+    height : auto;
+    border-radius : 12px;
+    display : block;
+}
